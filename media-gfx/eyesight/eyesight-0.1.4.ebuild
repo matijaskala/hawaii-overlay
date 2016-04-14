@@ -6,16 +6,16 @@ EAPI="5"
 
 inherit cmake-utils
 
-DESCRIPTION="Library shared among Hawaii Shell and other related applications."
+DESCRIPTION="Image viewer for Hawaii desktop environment"
 HOMEPAGE="http://www.maui-project.org"
 
 if [[ ${PV} = *9999* ]]; then
 		inherit git-2
-		EGIT_REPO_URI="git://github.com/mauios/libhawaii.git"
-		EGIT_BRANCH="dev"
+		EGIT_REPO_URI="git://github.com/mauios/eyesight.git"
+		EGIT_BRANCH="master"
 else
-		SRC_URI=""
-		KEYWORDS="~x86"
+		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+		KEYWORDS="amd64 x86"
 fi
 
 SLOT="0"
@@ -26,5 +26,5 @@ DEPEND="
 		dev-qt/qtcore:5
 		dev-qt/qtgui:5
 		dev-qt/qtdeclarative:5
-		dev-qt/qtquickcontrols:5
-		dev-libs/extra-cmake-modules"
+		dev-qt/qtprintsupport:5
+		dev-qt/linguist-tools:5"

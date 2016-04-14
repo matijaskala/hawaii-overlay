@@ -14,8 +14,8 @@ if [[ ${PV} = *9999* ]]; then
 		EGIT_REPO_URI="git://github.com/mauios/qtconfiguration.git"
 		EGIT_BRANCH="master"
 else
-		SRC_URI=""
-		KEYWORDS="~x86"
+		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+		KEYWORDS="amd64 x86"
 fi
 
 SLOT="0"

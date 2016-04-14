@@ -14,8 +14,8 @@ if [[ ${PV} = *9999* ]]; then
 	   EGIT_REPO_URI="git://github.com/hawaii-desktop/hawaii-terminal.git"
 	   EGIT_BRANCH="master"
 else
-	   SRC_URI="https://github.com/mauios/hawaii-terminal/archive/v0.2.0.tar.gz"
-	   KEYWORDS="~x86"
+	   SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	   KEYWORDS="amd64 x86"
 fi
 
 LICENSE="GPL-2"

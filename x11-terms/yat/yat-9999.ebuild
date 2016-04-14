@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/jorgen/yat"
 EGIT_REPO_URI="https://github.com/jorgen/yat.git"
 SRC_URI=""
 SLOT="0"
-KEYWORDS="~x86"
+KEYWORDS="amd64 x86"
 IUSE="debug"
 
 src_configure() {
