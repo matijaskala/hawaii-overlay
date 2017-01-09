@@ -4,27 +4,13 @@
 
 EAPI="5"
 
-inherit cmake-utils
+inherit hawaii
 
 DESCRIPTION="Library shared among Hawaii Shell and other related applications."
-HOMEPAGE="http://www.maui-project.org"
 
-if [[ ${PV} = *9999* ]]; then
-		inherit git-2
-		EGIT_REPO_URI="git://github.com/mauios/libhawaii.git"
-		EGIT_BRANCH="dev"
-else
-		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-		KEYWORDS="amd64 x86"
-fi
+EGIT_BRANCH="dev"
+KEYWORDS="amd64 x86"
 
-SLOT="0"
-
-RDEPEND="${DEPEND}"
-
-DEPEND="
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtdeclarative:5
-		dev-qt/qtquickcontrols:5
-		dev-libs/extra-cmake-modules"
+DEPEND="dev-qt/qtdeclarative:5"
+RDEPEND="${DEPEND}
+	dev-qt/qtquickcontrols:5"

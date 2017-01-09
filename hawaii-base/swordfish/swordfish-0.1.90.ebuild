@@ -4,28 +4,13 @@
 
 EAPI="5"
 
-inherit cmake-utils
+inherit hawaii
 
 DESCRIPTION="Hawaii Desktop File Manager"
-HOMEPAGE="http://www.maui-project.org"
 
-if [[ ${PV} = *9999* ]]; then
-		inherit git-2
-		EGIT_REPO_URI="git://github.com/hawaii-desktop/swordfish.git"
-		EGIT_BRANCH="master"
-else
-		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-		KEYWORDS="amd64 x86"
-fi
+KEYWORDS="amd64 x86"
 
-SLOT="0"
-
+DEPEND="dev-qt/qtwidgets:5
+	dev-qt/qtdeclarative:5
+	dev-qt/linguist-tools:5"
 RDEPEND="${DEPEND}"
-
-DEPEND="
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtnetwork:5
-		dev-qt/qtwidgets:5
-		dev-qt/qtdeclarative:5
-		dev-qt/linguist-tools:5"

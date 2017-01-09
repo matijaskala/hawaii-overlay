@@ -4,33 +4,16 @@
 
 EAPI="5"
 
-inherit cmake-utils
+inherit hawaii
 
 DESCRIPTION="Plasma Simple Shell"
-HOMEPAGE="http://www.maui-project.org"
 
-if [[ ${PV} = *9999* ]]; then
-		inherit git-2
-		EGIT_REPO_URI="git://github.com/mauios/pss.git"
-		EGIT_BRANCH="master"
-else
-		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-		KEYWORDS="amd64 x86"
-fi
-
-SLOT="0"
-
+DEPEND="dev-qt/qtdeclarative:5
+	kde-frameworks/plasma:5
+	kde-frameworks/kdelibs4support:5
+	kde-frameworks/ki18n:5
+	kde-frameworks/krunner:5
+	kde-frameworks/kservice:5
+	kde-frameworks/solid:5
+	kde-plasma/plasma-workspace"
 RDEPEND="${DEPEND}"
-
-DEPEND="
-		dev-libs/extra-cmake-modules
-		dev-qt/qtcore:5
-		dev-qt/qtnetwork:5
-		dev-qt/qtdeclarative:5
-		kde-frameworks/plasma:5
-		kde-frameworks/kdelibs4support:5
-		kde-frameworks/ki18n:5
-		kde-frameworks/krunner:5
-		kde-frameworks/kservice:5
-		kde-frameworks/solid:5
-		kde-plasma/plasma-workspace"

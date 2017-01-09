@@ -6,6 +6,13 @@ EAPI="5"
 
 inherit hawaii
 
-DESCRIPTION="Wallpapers for Hawaii desktop environment"
+DESCRIPTION="Plasma Simple Shell"
 
 KEYWORDS="amd64 x86"
+
+RDEPEND="
+	dev-qt/qtdbus:5
+	dev-qt/qtdeclarative:5
+	x11-libs/libxkbcommon
+"
+DEPEND="${RDEPEND}"

@@ -1,37 +1,15 @@
-# Copyright 1999-2013 Gentoo Foundation
+# Copyright  1999-2014 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=5
+EAPI="5"
 
-inherit cmake-utils
+inherit hawaii
 
 DESCRIPTION="Hawaii terminal emulator"
-HOMEPAGE="http://www.maui-project.org"
-
-if [[ ${PV} = *9999* ]]; then
-	   inherit git-2
-	   EGIT_REPO_URI="git://github.com/hawaii-desktop/hawaii-terminal.git"
-	   EGIT_BRANCH="master"
-else
-	   SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-	   KEYWORDS="amd64 x86"
-fi
 
 LICENSE="GPL-2"
-SLOT="0"
 
+DEPEND="dev-qt/qtwidgets:5
+	dev-qt/qtdeclarative:5"
 RDEPEND="${DEPEND}"
-
-DEPEND="
-	   dev-qt/qtcore:5
-	   dev-qt/qtgui:5
-	   dev-qt/qtwidgets:5
-	   dev-qt/qtnetwork:5
-	   dev-qt/qtdeclarative:5"
-
-src_configure() {
-	mycmakeargs=( -DKDE_INSTALL_USE_QT_SYS_PATHS=ON )
-
-	cmake-utils_src_configure
-}

@@ -4,26 +4,14 @@
 
 EAPI="5"
 
-inherit cmake-utils
+inherit hawaii
 
 DESCRIPTION="Configuration API with change notifications for Qt and QML applications"
-HOMEPAGE="http://www.maui-project.org"
 
-if [[ ${PV} = *9999* ]]; then
-		inherit git-2
-		EGIT_REPO_URI="git://github.com/mauios/qtconfiguration.git"
-		EGIT_BRANCH="master"
-else
-		SRC_URI="https://github.com/mauios/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-		KEYWORDS="amd64 x86"
-fi
-
-SLOT="0"
-
-RDEPEND="${DEPEND}"
+KEYWORDS="amd64 x86"
 
 DEPEND="
-				>=gnome-base/dconf-0.22.0
-				dev-qt/qtcore:5
-				dev-qt/qtnetwork:5
-				dev-qt/qtdeclarative:5"
+	>=gnome-base/dconf-0.22.0
+	dev-qt/qtnetwork:5
+	dev-qt/qtdeclarative:5"
+RDEPEND="${DEPEND}"
