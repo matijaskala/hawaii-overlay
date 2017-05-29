@@ -10,6 +10,7 @@ DESCRIPTION="Library for QtQuick applicications"
 
 EGIT_BRANCH="dev"
 KEYWORDS="amd64 x86"
+SLOT="0"
 
 DEPEND="dev-qt/qtdeclarative:5"
 RDEPEND="${DEPEND}
